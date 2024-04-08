@@ -31,7 +31,7 @@ jobs:
           job-status: success
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+          flutter-version: 2.5.3
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
