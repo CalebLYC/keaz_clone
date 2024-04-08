@@ -21,6 +21,14 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'adopt' # Ajout de la distribution Java requise.
+          architecture: x64
+          check-latest: false
+          server-id: github
+          server-username: ${{ secrets.ACTOR }}
+          server-password: ${{ secrets.PASSWORD }}
+          overwrite-settings: true
+          job-status: success
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
